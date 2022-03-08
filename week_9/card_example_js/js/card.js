@@ -22,8 +22,8 @@ class Card {
 		}
 
 		if (this.clicked) {
-			this.pos.x = mouseX;
-			this.pos.y = mouseY;
+			this.pos.x = mouseX + this.offset.x;
+			this.pos.y = mouseY + this.offset.y;
 		}
 	}
 
@@ -49,10 +49,18 @@ class Card {
 		this.draw();
 	}
 
-	check() {
+	checkHover() {
 		this.hovered = mouseX > this.pos.x - this.hdim.x && mouseX < this.pos.x + this.hdim.x && mouseY > this.pos.y - this.hdim.y && mouseY < this.pos.y + this.hdim.y;
+	}
+
+	checkClick() {
 		this.clicked = this.hovered && mouseIsPressed;
-		this.marktime = millis();
+		if (this.clicked) {
+			this.marktime = millis();
+			this.offset.x = mouseX - this.pos.x;
+			this.offset.y = mouseY - this.pos.y;
+			console.log(this.offset);
+		}
 	}
 
 }
