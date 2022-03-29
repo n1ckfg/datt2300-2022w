@@ -8,7 +8,11 @@ public class Bomb : MonoBehaviour {
     public float lifeTime = 2f;
     public Explosion explosionPrefab;
 
+    Player player;
+
     void Start() {
+        player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Player>();
+
         speed.x = Random.Range(speed.x * 0.8f, speed.x * 1.2f);
         StartCoroutine(checkAlive());
     }
@@ -23,6 +27,7 @@ public class Bomb : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        player.setHit();
         GameObject.Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
         Debug.Log("Player hit!");
