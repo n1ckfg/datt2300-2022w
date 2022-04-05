@@ -15,12 +15,14 @@ public class Player : MonoBehaviour {
     [HideInInspector] public bool isRunning = false;
     [HideInInspector] public bool isJumping = false;
 
+    private Vector3 screenBounds;
     private Rigidbody2D rb;
     private Animator animator;
        
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     }
 
     private void Update() {
@@ -31,7 +33,6 @@ public class Player : MonoBehaviour {
         }
 
         screenCoords = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         screenCoords.x = Mathf.Clamp(screenCoords.x, -screenBounds.x, screenBounds.x); 
 
         transform.position = Vector2.Lerp(transform.position, new Vector2(screenCoords.x, transform.position.y), lerpSpeed);
