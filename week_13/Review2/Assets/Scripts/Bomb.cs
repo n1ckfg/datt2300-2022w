@@ -8,24 +8,25 @@ public class Bomb : MonoBehaviour {
     public float lifeTime = 2f;
     public Explosion explosionPrefab;
 
-    Player player;
+    private Player player;
+    private Vector3 screenBounds;
 
     void Start() {
         player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Player>();
 
         speed = Random.Range(speed * 0.8f, speed * 1.2f);
-        StartCoroutine(checkAlive());
+
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     }
 
     void Update() {
         transform.Translate(speed, 0f, 0f);
-    }
 
-    IEnumerator checkAlive() {
-        yield return new WaitForSeconds(lifeTime);
-        player.score++;
-        Debug.Log("Score: " + player.score);
-        Destroy(gameObject);
+        if (transform.position.x < -screenBounds.x) {
+            player.score++;
+            Debug.Log("Score: " + player.score);
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) {

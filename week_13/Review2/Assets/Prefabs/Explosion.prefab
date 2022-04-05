@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.5
+  particlesPrefab: {fileID: 4086083362154035422, guid: 5ea6e3f9183537b41963a737745133d2, type: 3}
 --- !u!82 &306899045494884182
 AudioSource:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502041617580266318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -128,6 +128,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 0}
   screenCoords: {x: 0, y: 0}
   isRunning: 0
+  isJumping: 0
 --- !u!50 &540497722
 Rigidbody2D:
   serializedVersion: 4

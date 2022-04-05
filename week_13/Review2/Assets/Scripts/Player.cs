@@ -11,10 +11,11 @@ public class Player : MonoBehaviour {
     public int score = 0;
     public Explosion explosionPrefab;
 
-    [HideInInspector] public Vector2 screenCoords;
     [HideInInspector] public bool isRunning = false;
     [HideInInspector] public bool isJumping = false;
+    [HideInInspector] public Vector2 screenCoords;
 
+    private Vector3 screenBounds;
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -24,15 +25,15 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
+        screenCoords = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        screenCoords.x = Mathf.Clamp(screenCoords.x, -screenBounds.x, screenBounds.x);
+
         if (!isJumping && Input.GetKeyDown(KeyCode.Space)) {
             Debug.Log("Jumping");
             setJump(true);
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
-
-        screenCoords = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        screenCoords.x = Mathf.Clamp(screenCoords.x, -screenBounds.x, screenBounds.x); 
 
         transform.position = Vector2.Lerp(transform.position, new Vector2(screenCoords.x, transform.position.y), lerpSpeed);
 
