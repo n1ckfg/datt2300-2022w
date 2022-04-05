@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62267380a4e03b49950adec7147373e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.01
-  lifeTime: 2
+  speed: -0.005
+  lifeTime: 3
   explosionPrefab: {fileID: 4281193059702495789, guid: 5e710346fa3df524b86f65d496f22fb9, type: 3}
 --- !u!58 &1732983066
 CircleCollider2D:

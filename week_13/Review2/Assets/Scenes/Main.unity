@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 5681854714515541803, guid: 66de10ab54583bb49a7929636b4ded07, type: 3}
-  spawnInterval: 1
+  spawnInterval: 2
   yRange: 0.3
 --- !u!1 &1534760795
 GameObject:
@@ -1027,12 +1027,24 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1502041617580266316, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502041617580266316, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502041617580266316, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502041617580266316, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1502041617580266316, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 1502041617580266316, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1065,6 +1077,10 @@ PrefabInstance:
     - target: {fileID: 1502041617580266316, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502041617580266316, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1502041617580266318, guid: 74a6a23f1d557d749bc9e1019be795b1, type: 3}
       propertyPath: m_Name

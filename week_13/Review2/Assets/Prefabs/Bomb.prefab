@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1871016666580543745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373282a7cb68a6f4b9ed6bdc674a5fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.01
-  lifeTime: 2
+  speed: -0.005
+  lifeTime: 3
   explosionPrefab: {fileID: 8048809753159818235, guid: 2f076359ff0ad6b45baccb111780a69d, type: 3}
 --- !u!58 &1980203689
 CircleCollider2D:

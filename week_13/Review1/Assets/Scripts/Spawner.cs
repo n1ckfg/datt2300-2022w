@@ -9,15 +9,12 @@ public class Spawner : MonoBehaviour {
     public float yRange = 3f;
 
     private Player player;
+    private bool firstRun = true;
 
     void Start() {
         player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Player>();
-
+ 
         StartCoroutine(makeBomb());
-    }
-
-    void Update() {
-        //
     }
 
     IEnumerator makeBomb() {

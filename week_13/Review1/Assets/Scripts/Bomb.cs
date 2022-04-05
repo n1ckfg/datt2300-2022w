@@ -13,7 +13,7 @@ public class Bomb : MonoBehaviour {
     void Start() {
         player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Player>();
 
-        speed = Random.Range(speed * 0.8f, speed * 1.2f);
+        speed = Random.Range(speed * 0.8f, speed);
         StartCoroutine(checkAlive());
     }
 

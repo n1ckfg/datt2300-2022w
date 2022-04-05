@@ -13,17 +13,18 @@ public class Player : MonoBehaviour {
 
     [HideInInspector] public Vector2 screenCoords;
     [HideInInspector] public bool isRunning = false;
+    [HideInInspector] public bool isJumping = false;
 
     private Rigidbody2D rb;
     private Animator animator;
-
+       
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (!isJumping && Input.GetKeyDown(KeyCode.Space)) {
             Debug.Log("Jumping");
             setJump(true);
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
@@ -64,7 +65,8 @@ public class Player : MonoBehaviour {
     }
 
     public void setJump(bool b) {
-        animator.SetBool("Jump", b);
+        isJumping = b;
+        animator.SetBool("Jump", isJumping);
     }
 
 }
